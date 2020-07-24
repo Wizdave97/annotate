@@ -1,0 +1,62 @@
+{
+  "name": "monday-integration-quickstart-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "token": "ngrok authtoken 1epFZg3flKFO5Zgqw8N8cGC6gKN_7w34zcFqmHEjjNeSqaPDN",
+    "start": "npm run stop && concurrently \"npm run server\" \"npm run expose\"",
+    "build": "react-scripts build",
+    "build:css": "postcss ./tailwind.css -o ./src/tailwind.css",
+    "expose": "ngrok http 8301",
+    "server": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "stop": "kill-port 8301 && kill-port 4049 && kill-port 4040"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/socket.io-client": "^1.4.33",
+    "autoprefixer": "^9.8.5",
+    "cssnano": "^4.1.10",
+    "fabric": "^3.6.3",
+    "graphql": "^15.3.0",
+    "lodash": "^4.17.19",
+    "monday-sdk-js": "0.0.16",
+    "postcss-cli": "^7.1.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "socket.io-client": "^2.3.0",
+    "tailwindcss": "^1.5.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/fabric": "^3.6.7",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "concurrently": "^5.2.0",
+    "cross-port-killer": "^1.2.1",
+    "ngrok": "^3.2.7",
+    "typescript": "^3.9.6"
+  }
+}
